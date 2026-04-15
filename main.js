@@ -1,48 +1,52 @@
-// 6.2. Объявление функции (классический способ)
-function sum(a, b) {
-    return a + b;
-}
-console.log(sum(3, 5));
-// Практическое задание №1
-function multi(a1, b1) {
-    return a1 * b1;
-}
-console.log(multi(3, 5));
+// 7.2. Создание массива
+let numbersArr = [1,2,3,4,5];
+console.log(numbersArr);
+// 7.3. Доступ к элементам массива
+console.log(numbersArr[0]);
 
-// Функция без return
-function sayHello(name) {
-    console.log(`Hello, ${name}`);
-}
-sayHello("Timofey")
-// Практическое задание №2
-function printInfo(name, age) {
-    console.log(`Hello, ${name}, вам ${age} лет`);
-}
-printInfo("Timofey", 20)
+// 7.4. Практическое задание №1
+let colors = ["blue", "green", "yellow"];
+console.log(colors[0]);
+console.log(colors[2]);
+colors[1] = "orange";
+console.log(colors[1]);
 
-// 6.6. Значения параметров по умолчанию
-function greet(name = "Гость") {
-    console.log("Привет, " + name);
-}
-greet();
-greet("Anastasia");
-// 6.7. Практическое задание №3
-function calculateDiscount(num, num2 = 10) {
-    const num3 = (num * num2) / 100
-    const num4 = num - num3
-    console.log("Цена с учетом скидки: ", + num4)
-}
-calculateDiscount(num = 1000);
-calculateDiscount(num = 1000, num2 = 15);
+// 7.5. Длина массива
+console.log(numbersArr.length);
+// 7.6. Добавление и удаление элементов
+numbersArr.push(10);
+console.log(numbersArr);
 
-// 6.8. Функции как значения
-const add = function (a, b) {
-    return a + b;
-};
-console.log(add(2, 3));
+numbersArr.pop();
+console.log(numbersArr);
 
-// 6.9. Стрелочные функции (Arrow Functions)
-function sumFunc(a, b) {
-    return a + b;
+// 7.7. Практическое задание №2
+let students = [];
+students.push("Anton", "Ilya", "Rinat");
+console.log(students)
+students.pop();
+console.log(students);
+
+// 7.8. Перебор массива с помощью цикла for
+let number2 = [10,20,30];
+for (let i = 0; i < number2.length; i++) {
+    console.log(number2[i]);
 }
-const sumFunc2 = (a, b) => a + b;
+// 7.9. Цикл for...of
+for (let value of number2) {
+    console.log(value);
+}
+// 7.10. Массивы с разными типами данных
+let mixedArray = [1, "text", true, 3.14];
+console.log(mixedArray);
+// 7.11. Поиск элемента в массиве
+console.log(numbersArr.includes(1));
+console.log(numbersArr.indexOf(2));
+
+//console.log(fruits.includes("яблоко"));
+//console.log(fruits.includes("манго"));
+
+// 7.12. Практическое задание №4
+let city = ["Volz", "Volg", "Znamensky"];
+console.log(city.includes("Volz"))
+console.log(city.indexOf("Volz"))
