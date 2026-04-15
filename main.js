@@ -1,84 +1,48 @@
-// 5.1
-/*
-for (let i = 0; i < 5; i++) {
-    console.log(i);
+// 6.2. Объявление функции (классический способ)
+function sum(a, b) {
+    return a + b;
 }
-*/
+console.log(sum(3, 5));
+// Практическое задание №1
+function multi(a1, b1) {
+    return a1 * b1;
+}
+console.log(multi(3, 5));
 
-// prac 5.3
-/*
-for (let i = 0; i < 11; i++) {
-    if (i % 2 == 0) {
-        console.log(i)
-    }
+// Функция без return
+function sayHello(name) {
+    console.log(`Hello, ${name}`);
 }
-let sum = 0
-for (let i = 0; i < 11; i++) {
-    sum += i
-}
-console.log(sum)
-*/
-
-// 5.4. Цикл while
-/*
-let count = 0;
-
-while (count < 3) {
-    console.log("Count:",count);
-    count++;
-}
-*/
+sayHello("Timofey")
 // Практическое задание №2
-/*
-let number = 5;
+function printInfo(name, age) {
+    console.log(`Hello, ${name}, вам ${age} лет`);
+}
+printInfo("Timofey", 20)
 
-while (number >= 0) {
-    console.log("Num:", number);
-    number--;
+// 6.6. Значения параметров по умолчанию
+function greet(name = "Гость") {
+    console.log("Привет, " + name);
 }
-*/
+greet();
+greet("Anastasia");
+// 6.7. Практическое задание №3
+function calculateDiscount(num, num2 = 10) {
+    const num3 = (num * num2) / 100
+    const num4 = num - num3
+    console.log("Цена с учетом скидки: ", + num4)
+}
+calculateDiscount(num = 1000);
+calculateDiscount(num = 1000, num2 = 15);
 
-// 5.6. Цикл do...while
-/*
-let doValue = 0;
-do {
-    console.log("Value:", doValue);
-    doValue++;
-} while (doValue < 3);
-// 5.7. Операторы break и continue
-for (let i = 0; i < 10; i++) {
-    if (i === 5) {
-        break;
-    }
-    console.log(i);
-}
-*/
+// 6.8. Функции как значения
+const add = function (a, b) {
+    return a + b;
+};
+console.log(add(2, 3));
 
-// Практическое задание №4
-/*
-for (let i = 0; i < 10; i++) {
-    if (i === 5) {
-        continue;
-    } else if(i === 8) {
-        break;
-    }
-    console.log(i);
+// 6.9. Стрелочные функции (Arrow Functions)
+function sumFunc(a, b) {
+    return a + b;
 }
-*/
-
-//  5.9. Вложенные циклы
-/*
-for (let i = 1; i <= 3; i++) {
-    for (let j = 1; j <= 3; j++) {
-        console.log(`i = ${i}, j = ${j}`);
-    }
-}
-*/
-// 5.10. Практическое задание №5
-for (let i = 1; i <= 4; i++) {
-    let stars = "";
-    for (let j = 1; j <= i; j++) {
-        stars += "*";
-    }
-    console.log(stars);
-}
+const sumFunc2 = (a, b) => a + b;
